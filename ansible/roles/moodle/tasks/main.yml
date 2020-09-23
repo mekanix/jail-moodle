@@ -1,0 +1,28 @@
+---
+- name: install moodle packages
+  with_items: "{{ moodle_packages }}"
+  package:
+    name: "{{ item.name }}"
+  notify:
+    - restart php-fpm
+
+- name: create moodledata directory
+  file:
+    name: /usr/local/www/moodledata
+    owner: www
+    group: www
+    state: directory
+
+- name: enable php-fpm
+  template:
+    src: php_fpm.j2
+    dest: /etc/rc.conf.d/php_fpm
+  notify:
+    - restart php-fpm
+
+- name: configure php-fpm
+  template:
+    src: www.conf.j2
+    dest: /usr/local/etc/php-fpm.d/www.conf
+  notify:
+    - restart php-fpm
