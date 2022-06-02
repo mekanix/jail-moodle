@@ -6,5 +6,5 @@
   hosts: SERVICE
   roles:
     - onelove-roles.freebsd-common
-    - repo
+    - onelove-roles.freebsd_repo
     - moodle

@@ -1,7 +1,7 @@
 ---
-moodle_major: 3
-moodle_minor: 9
-php_major: 7
-php_minor: 4
+moodle_major: 4
+moodle_minor: 0
+php_major: 8
+php_minor: 0
 moodle_packages:
   - name: "moodle{{ moodle_major }}{{ moodle_minor }}-php{{ php_major }}{{ php_minor }}"
