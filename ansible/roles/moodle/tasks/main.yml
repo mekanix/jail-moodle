@@ -26,3 +26,10 @@
     dest: /usr/local/etc/php-fpm.d/www.conf
   notify:
     - restart php-fpm
+
+- name: configure php.ini
+  template:
+    src: php.ini.j2
+    dest: /usr/local/etc/php.ini
+  notify:
+    - restart php-fpm
