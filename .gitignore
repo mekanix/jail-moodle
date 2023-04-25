@@ -11,3 +11,4 @@ cbsd.conf
 site.retry
 project.mk
 vars.mk
+templates/fstab

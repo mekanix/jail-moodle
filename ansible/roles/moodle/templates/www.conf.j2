@@ -1,7 +1,17 @@
-[www]
+[www4]
 user = www
 group = www
 listen = 0.0.0.0:9000
+pm = dynamic
+pm.max_children = 5
+pm.start_servers = 2
+pm.min_spare_servers = 1
+pm.max_spare_servers = 3
+
+[www6]
+user = www
+group = www
+listen = [::]:9000
 pm = dynamic
 pm.max_children = 5
 pm.start_servers = 2
